@@ -1,0 +1,14 @@
+.name-tag {
+  text-align: right;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+  span{
+    color: $color-primary;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  }

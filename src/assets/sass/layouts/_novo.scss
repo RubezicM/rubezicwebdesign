@@ -1,0 +1,10 @@
+.panel {
+  &__page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: none;
+    animation-delay: .34s;
+  }
+}

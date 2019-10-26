@@ -1,0 +1,27 @@
+
+.welcome-splash {
+  font-size: 4rem;
+  color: #e2e2e2;
+  width: 45rem;
+  padding: 2rem;
+  @include screen('min992') {
+    width: 65rem;
+    font-size: 5rem;
+  }
+  &__big {
+    font-weight: 900;
+    text-transform: uppercase;
+    &--middle {
+      background-color: rgba($color-primary,.85);
+    }
+  }
+
+  &__small {
+    font-size: 1.8rem;
+    background-color: $color-primary;
+    margin-top: 5rem;
+    padding: 1.5rem 0;
+    font-weight: 600;
+  }
+
+}

@@ -1,0 +1,54 @@
+.container {
+  margin-top: 10rem;
+}
+
+
+@include screen('desktop'){
+  .container{
+    width: 75%;
+    margin: 4% 19% 0 19%;
+  }
+}
+
+// Imported
+
+html {
+  // this defines what 1rem is
+  font-size: 62.5%;  // 1 rem = 10px;
+
+  @include respond(tab-land){
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port){
+    font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop){
+    //font-size: 75%;   // 1rem = 12, 12/6
+  }
+}
+
+body {
+  box-sizing: border-box;
+  color: $color-white;
+  background-color: $color-black-main;
+  height: 100vh;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,a:focus{
+  text-decoration: none;
+  color: $color-white;
+
+  &.referal-link {
+    text-decoration: underline;
+  }
+}

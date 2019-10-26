@@ -1,0 +1,75 @@
+
+/******************** CONTACT PAGE ****************/
+#contact-wrapper {
+  margin-top: 60px;
+}
+.form-holder {
+  position: relative;
+
+  .loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+.error {
+  color: $color-primary;
+}
+.soc-line {
+  width: 160px;
+  background-color: white;
+  height: 1px;
+  margin: 20px auto;
+}
+.contact-info {
+  padding: 0;
+  width: 100%;
+  margin-top: 3rem;
+
+  @include screen('min992'){
+    margin-top: 0;
+    width: unset;
+    justify-content: center;
+    border-left: 1px solid;
+    padding: 0 45px;
+  }
+
+  &__headline {
+    display: none;
+    @include screen('min992'){
+      display: block;
+      margin-bottom: 6rem;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    @include screen('min992'){
+      display: block;
+
+    }
+    & > div:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    &--links {
+      cursor: pointer;
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  &__icon {
+    font-size: 3rem;
+    color: #008080;
+    margin-right: 25px;
+    position: relative;
+    top: 6px;
+  }
+}
+
+

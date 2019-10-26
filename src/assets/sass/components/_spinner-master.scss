@@ -1,0 +1,54 @@
+.spinner-master * {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  box-sizing: border-box;
+}
+.spinner-master {
+  position: relative;
+  float: right;
+  width: 26px;
+  cursor: pointer;
+  right: 30px;
+  top: 23px;
+}
+
+.spinner-master .spinner {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.spinner-master .part-1 {
+  position: relative;
+  float: left;
+}
+
+.spinner-master .horizontal {
+  position: relative;
+  float: left;
+  margin-top: 5px;
+}
+
+.spinner-master .part-2 {
+  position: relative;
+  float: left;
+  margin-top: 5px;
+}
+
+.spinner-master.active .horizontal {
+  opacity: 0;
+}
+
+.spinner-master.active .part-1 {
+  transform: rotate(405deg);
+  -webkit-transform: rotate(405deg);
+  margin-top: 6px;
+}
+
+.spinner-master.active .part-2 {
+  transform: rotate(-405deg);
+  -webkit-transform: rotate(-405deg);
+  margin-top: -14px;
+}

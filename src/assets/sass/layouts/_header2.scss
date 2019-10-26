@@ -1,0 +1,20 @@
+.header {
+  width: 100vw;
+  height: 8.5rem;
+  background-color: $color-black-secondary;
+  position: fixed;
+  z-index: 7;
+  @include screen('tablet'){
+      display: flex;
+      align-items: center;
+      .spinner-master {
+        display: none;
+      }
+    }
+
+  @include screen('desktop'){
+      display: block;
+      width: 20rem;
+      height: 100vh;
+    }
+  }

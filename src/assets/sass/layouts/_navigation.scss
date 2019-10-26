@@ -1,0 +1,100 @@
+.navigation {
+  display: none;
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-black-secondary;
+
+  @include screen('tablet'){
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    position: unset;
+    left: unset;
+    top: unset;
+
+    }
+
+  @include screen('desktop'){
+      position: relative;
+      top: 15rem;
+      display: block;
+      &__list {
+        display: block;
+        height: initial;
+        li {
+          padding: 1.5rem 3.5rem 1.5rem 0;
+          display: block;
+          border-right: 5px solid $color-primary;
+        }
+      }
+    }
+
+  &__list{
+    opacity: 0;
+    visibility: hidden;
+    list-style: none;
+    font-size: 2rem;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    transition: all .3s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    @include screen('tablet'){
+      visibility: visible;
+      opacity: 1;
+      position: unset;
+      transform: unset;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      flex-direction: row;
+      margin: 0 auto;
+      justify-content: space-evenly;
+      font-size: 1.6rem;
+        li{
+          display: flex;
+          align-items: center;
+          padding: 0 5rem;
+        }
+    }
+    @include screen('desktop'){
+      visibility: visible;
+      opacity: 1;
+      position: unset;
+      transform: unset;
+      display: block;
+      height: initial;
+      font-size: 1.6rem;
+        li {
+          padding: 1.5rem 3.5rem 1.5rem 0;
+          display: block;
+          border-right: 5px solid $color-primary;
+        }
+      }
+    &.flex {
+      visibility: visible;
+      opacity: 1;
+
+      li:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      li {
+        padding: 2.5rem 0;
+      }
+    }
+
+    li{
+      cursor: pointer;
+    }
+    li.current {
+      background-color: $color-primary;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.btn {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: inline-block;
+  text-transform: uppercase;
+  color: $color-white;
+  transition: all .2s ease-in-out;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+    color: $color-black-main;
+    &::after {
+      visibility: visible;
+      transform: scaleX(1.05) scaleY(1.05);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  @include respond(phone){
+    min-width: unset;
+    font-size: 1.3rem;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    background-color: $color-primary;
+  }
+  &__main {
+    padding: 1.5rem 3rem;
+    @include respond(phone){
+      padding: 1.3rem 1.5rem;
+    }
+    &--small {
+      padding: 1.2rem 3rem;
+      width: auto;
+      min-width: unset;
+      font-size: 1.2rem;
+      font-weight: 400;
+      @include respond(phone){
+        padding: 1.3rem 1.5rem;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,22 @@
+h3  {
+  font-size:24px;
+  color: $color-primary;
+  margin-bottom: 30px;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 8px;
+    background: transparent url('../../assets/images/underline.png') repeat-x;
+    margin-top: 5px;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $default-font-size;
+  font-weight: 400;
+  line-height: 1.4;
+  color: $color-white;
+}

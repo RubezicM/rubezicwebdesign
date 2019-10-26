@@ -1,0 +1,105 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:       Phone
+600 - 900px:     Tablet portrait
+900 - 1200px:    Tablet Landscape
+[1200 - 1800px]  is where our normal styles apply
+1800px + :       Big desktop
+
+
+ $breakpoint argument choices:
+
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+    1em = 16px;
+*/
+
+
+@mixin respond($breakpoint){
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em){   // 600px
+            @content;
+        }
+    }
+    @if $breakpoint == mob-nav {
+        @media (max-width:45.25em) {  // 724px
+            @content;
+        }
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em){    // 900px
+            @content;
+        }
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em){   // 1200px
+            @content;
+        }
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em){   // 1800px
+            @content;
+        }
+    }
+
+    @else {
+        @media(max-width: $breakpoint){   // Custom value
+            @content;
+        }
+    }
+}
+
+// Screen sizes
+
+@mixin screen($size) {
+    $desktop: "(min-width: 1200px)";
+    $tablet: "(min-width: 768px) and (max-width: 1199px)";
+    $mobile: "(max-width: 767px)";
+    $min768: "(min-width: 768px)";
+    $max520: "(max-width: 520px)";
+    $min992: "(min-width: 992px)";
+    @if $size == desktop {
+        @media only screen and #{$desktop} {
+            @content;
+        }
+    }
+    @else if $size == tablet {
+        @media only screen and #{$tablet} {
+            @content;
+        }
+    }
+    @else if $size == mobile {
+        @media only screen and #{$mobile} {
+            @content;
+        }
+    }
+    @else if $size == min768 {
+        @media only screen and #{$min768} {
+            @content;
+        }
+    }
+    @else if $size == max520 {
+        @media only screen and #{$max520} {
+            @content;
+        }
+    }
+    @else if $size == min992 {
+        @media only screen and #{$min992} {
+            @content;
+        }
+    }
+}

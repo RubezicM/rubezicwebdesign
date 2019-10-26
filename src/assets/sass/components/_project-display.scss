@@ -1,0 +1,88 @@
+.project-display {
+  margin: 0 auto 6rem auto;
+  background-color: $color-black-secondary;
+
+  @include screen('min992'){
+    background-color: #252328;
+    display: flex;
+    margin-bottom: 50px;
+    height: 30rem;
+  }
+
+  &__side {
+    flex: 1;
+    align-items: center;
+    display: flex;
+    height: 35rem;
+    @include screen('min992'){
+      height: 100%;
+    }
+    &--left {
+      padding: 2rem 0;
+      @include screen('min992'){
+       padding: 0;
+      }
+    }
+    &--right {
+      padding: 1.5rem 2rem;
+      border-bottom: 4px solid $color-primary;
+      @include screen('min992'){
+        padding: 3rem 2rem;
+        flex: 1;
+        border: none;
+      }
+      @include screen('desktop'){
+        flex: 2;
+      }
+    }
+  }
+  &__showcase {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    @include screen('min992'){
+      width: 100%;
+    }
+    &--link {
+      &:hover {
+        cursor: zoom-in;
+      }
+    }
+    &--image {
+      max-width: 100%;
+    }
+  }
+
+  .project-info {
+    & > *:not(:last-child){
+      margin-bottom: 1.5rem;
+    }
+    &__desc {
+      font-size: 1.7rem;
+    }
+
+    &__tools {
+      font-weight:300;
+      font-style: italic;
+      font-size: 1.4rem;
+    }
+    &__external {
+     margin-top: 6rem;
+      &--link {
+        display: block;
+        color: $color-primary;
+        text-decoration: underline;
+        margin-bottom: 1.65rem;
+        font-size: 1.6rem;
+        i {
+          margin-right: 1.5rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

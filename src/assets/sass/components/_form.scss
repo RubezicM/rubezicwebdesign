@@ -1,0 +1,38 @@
+.form {
+
+  &__input {
+    border: none;
+    border-radius: 0;
+    background-color: $color-black-secondary;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: $color-white;
+
+    &:focus {
+      color: $color-white;
+      background-color:  lighten($color-black-secondary,5%);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &__icon {
+    border: none;
+    border-radius: 0;
+    background-color: $color-primary;
+    width: 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__textarea {
+    min-height: 18rem;
+  }
+
+}
+
+////// BOOTSTRAP CLASSES
+
+.form-group {
+  margin-bottom: 1.5rem;
+}

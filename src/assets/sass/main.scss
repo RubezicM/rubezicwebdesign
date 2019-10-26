@@ -1,0 +1,64 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100i,300,400,600,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+
+
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+
+// required
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// components
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../../../node_modules/bootstrap/scss/forms";
+@import "../../../node_modules/bootstrap/scss/custom-forms";
+@import "../../../node_modules/bootstrap/scss/input-group";
+
+
+// magnific popup
+@import "../../../node_modules/magnific-popup/src/css/main";
+
+
+@import "settings/vars";
+@import "../../../node_modules/animate-sass/animate";
+
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+
+@import "base/animations";
+@import 'base/reset';
+@import 'base/utilities';
+@import 'base/base';
+@import 'base/typography';
+
+
+@import 'components/buttons.scss';
+@import 'components/form.scss';
+@import "components/welcome-splash";
+@import "components/loader";
+@import "components/logo";
+@import 'components/hover';
+@import "components/project-display";
+@import "components/bio-info";
+@import "components/spinner-master";
+@import "components/service-display";
+@import 'components/name-tag';
+
+
+@import 'layouts/header.scss';
+@import 'layouts/header2.scss';
+@import 'layouts/navigation.scss';
+@import 'layouts/novo.scss';
+
+@import "pages/home";
+@import "pages/contact";
+@import "pages/about";
+
+
+
