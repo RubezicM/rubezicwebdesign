@@ -5,6 +5,7 @@ import "../vendors/scripts/jquery.validate.min";
 
 const menuItems = document.querySelectorAll('.navigation__item');
 const logo = document.querySelector('.logo');
+let link;
 
 logo.addEventListener('click',(e)=>{
     document.querySelector('.panel__page.activePage').classList.remove('activePage');
@@ -16,8 +17,7 @@ menuItems.forEach((link)=>{
     link.addEventListener('click',(e)=>{
        document.querySelector('.navigation__item.current').classList.remove('current');
        link.classList.add('current');
-        // !e.currentTarget.classlist.contains('current') ? e.currentTarget.classlist.add('current'): e.currentTarget.classlist.remove('current') ;
-        let page = link.id + 'Panel';
+       let page = link.id + 'Panel';
         document.querySelector('.panel__page.activePage').classList.remove('activePage');
         document.querySelector(`#${page}`).classList.add('activePage');
     });
@@ -110,9 +110,59 @@ function checkWidth() {
         $nav.addClass('hvr-sweep-to-left');
     }
 }
-function addLoader() {
 
+$('.contact-popup').off('click').on('click',buildPopup);
+
+function buildPopup(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    buildDarkness();
+    link = !link ? e.target : link;
+    let type = link.classList[1];
+    let str = type;
+        switch (type) {
+            case 'download':
+                str = 'You are about to download PDF file containing my CV information.';
+                break;
+
+            case 'email':
+                str = 'You are about to open the external program for sending emails';
+                break;
+            default :
+                str = 'You are about to open this link'
+        }
+    $('body').prepend(`<div class="popup"><p>${str}</p>` +
+        '<div><button class="popup__button popup__button--confirm" value="confirm">I agree</button>' +
+        '<button class="popup__button popup__button--cancel" value="cancel">Cancel</button></div></div>')
+        .fadeIn('fast');
+    $(this).prop('disabled');
+    console.log(link);
 }
+
+
+function buildDarkness(){
+    $('body').addClass('darkness');
+}
+
+$('body').on('click','.popup__button',function(e){
+            $('.contact-popup').off('click',buildPopup);
+            let action = $(this).val();
+            $('body').removeClass('darkness');
+            $('.popup').fadeOut('fast',function(){
+                $('.popup').remove();
+            });
+            if(action === 'confirm'){
+                link.click();
+                $('.contact-popup').on('click',buildPopup);
+            } else {
+                $('.popup').fadeOut('fast');
+                $('.contact-popup').on('click',buildPopup);
+            }
+            // reset link
+
+                    link = '';
+});
+
 
 $('#contact-form').validate({
   submitHandler: function(form) {

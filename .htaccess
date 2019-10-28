@@ -61,7 +61,9 @@
   ExpiresByType application/javascript    "access plus 1 year"
 
 </IfModule>
-
+ <IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+ </IfModule>
 #
 # Gzip compression
 #

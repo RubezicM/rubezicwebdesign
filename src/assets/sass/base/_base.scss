@@ -34,6 +34,21 @@ body {
   color: $color-white;
   background-color: $color-black-main;
   height: 100vh;
+  position: relative;
+
+  &.darkness {
+
+    &::after {
+      content: "";
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba($color-black-secondary,.8);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 999;
+    }
+  }
 }
 
 ::selection {
